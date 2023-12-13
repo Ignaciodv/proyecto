@@ -104,6 +104,10 @@ nav a:active {
     width: 65%;
     height: 400px;
 }
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
 
 button{
     margin: 5px;
@@ -112,7 +116,8 @@ button{
 
 button:hover{
     cursor: pointer;
-
+    background-color: aqua;
+    color:#16212b;
 }
 
 

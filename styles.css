@@ -120,7 +120,10 @@ p{
     width: 65%;
     height: 400px;
 }
-
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
 button{
     margin: 5px;
     box-shadow: 0px 0px 2px black;
@@ -128,6 +131,8 @@ button{
 
 button:hover{
     cursor: pointer;
+    background-color: aqua;
+    color:#16212b;
 
 }
 /* FIN DE RETOQUES EN LAS PELIS Y LA IMAGEN */
