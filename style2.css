@@ -164,8 +164,12 @@ footer{
     color: #1DA1F2;
 }
 
-.redesSociales a:last-child{
+.redesSociales a:nth-child(3){
     color: #E1306E;
+}
+
+.redesSociales a:last-child{
+    color: green;
 }
 
 
