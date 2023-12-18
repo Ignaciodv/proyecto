@@ -179,6 +179,7 @@ footer{
     .container_peliculas{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
 
@@ -192,7 +193,7 @@ footer{
     .peliculas img{
         width: 80%;
         height: 300px;
-        margin-left: 0px;
+        margin-left: 10%;
 
     }
 
@@ -228,6 +229,8 @@ footer{
     .container_peliculas{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+
     }
 
 
@@ -241,7 +244,7 @@ footer{
     .peliculas img{
         width: 80%;
         height: 300px;
-        margin-left: 0px;
+        margin-left: 10%;
 
     }
 
