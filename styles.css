@@ -95,6 +95,11 @@ nav a:active {
 h2{
     color: white;
     text-align: center;
+    transform: rotate(-360deg);
+    transition: 5s;
+}
+h2:hover{
+    cursor: pointer;
 }
 
 h3{
