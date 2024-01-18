@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="videoclub_online">
+    <title>Document</title>
     <script src="https://kit.fontawesome.com/c070e348d4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style3.css">
-    <title>PROYECTO</title>
+    <title>Accion</title>
 </head>
 
 <body>
@@ -27,7 +29,7 @@
                 <li><a href="index3.html">Peliculas de Accion</a></li>
                 <li><a href="index1.html">Contacto</a></li>
             </ul>
-            <button class="burguer">
+            <button class="burguer" type="button">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
@@ -36,7 +38,7 @@
 
 
     <h2>Peliculas de Accion</h2>
-
+    <div id="carrito">
     <div class="container_peliculas">
 
         <div class="peliculas">
@@ -47,8 +49,8 @@
                 amaba y pusieron precio a su cabeza.
             </p>
             <div class="buttons">
-                <button type="submit">ALQUILAR</button><br>
-                <button type="submit">COMPRAR</button><br>
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
                 <a href="https://www.youtube.com/watch?v=L0anWmmd8TI"><button type="submit">TRAILER</button><br></a>
                 
             </div>
@@ -61,8 +63,8 @@
                 internacional de narcotraficantes.
             </p>
             <div class="buttons">
-                <button type="submit">ALQUILAR</button><br>
-                <button type="submit">COMPRAR</button><br>
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
                 <a href= "https://www.youtube.com/watch?v=0NCl9eue_jo">
                 <button type="submit">VER TRAILER</button></a>
             </div>
@@ -75,8 +77,8 @@
                 Washington D. C.
             </p>
             <div class="buttons">
-                <button type="submit">ALQUILAR</button><br>
-                <button type="submit">COMPRAR</button><br>
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
                 <a href= "https://www.youtube.com/watch?v=gYWvwkXreaI&t=12s">
                 <button type="submit">VER TRAILER</button></a>
             </div>
@@ -84,34 +86,68 @@
 
 
         <div class="peliculas">
-            <img src="imagenes/Pelicula_accion_3.png" alt="pelicula">
-            <h3>Duro de matar 2</h3>
-            <p>Un policía de Los Ángeles pelea contra una banda de terroristas que han tomado el aeropuerto de
-                Washington D. C.
+            <img src="imagenes/Sin título.jpeg" alt="pelicula">
+            <h3>GLADIATOR</h3>
+            <p>Máximo, general romano, desea volver a casa, pero el emperador Marco Aurelio quiere que herede el imperio. Esto hace que Cómodo ordene matar a su familia. Máximo escapa de la muerte y regresa a Roma como gladiador para vengar la muerte de su familia.
             </p>
             <div class="buttons">
-                <button type="submit">ALQUILAR</button><br>
-                <button type="submit">COMPRAR</button><br>
-                <a href= "https://www.youtube.com/watch?v=gYWvwkXreaI&t=12s">
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
+                <a href= "https://www.youtube.com/watch?v=Pb6WME02hdA">
                 <button type="submit">VER TRAILER</button></a>
             </div>
         </div>
 
         <div class="peliculas">
-            <img src="imagenes/Pelicula_accion_3.png" alt="pelicula">
-            <h3>Duro de matar 2</h3>
-            <p>Un policía de Los Ángeles pelea contra una banda de terroristas que han tomado el aeropuerto de
-                Washington D. C.
+            <img src="imagenes/ROCKY.jpeg" alt="pelicula">
+            <h3>ROCKY</h3>
+            <p>Un humilde boxeador de Filadelfia, en el que nadie cree, tiene la oportunidad de cambiar su vida por completo si lucha por el título mundial contra el temible Apollo Creed.
             </p>
             <div class="buttons">
-                <button type="submit">ALQUILAR</button><br>
-                <button type="submit">COMPRAR</button><br>
-                <a href= "https://www.youtube.com/watch?v=gYWvwkXreaI&t=12s">
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
+                <a href= "https://www.youtube.com/watch?v=yVoBTFG2QKM">
                 <button type="submit">VER TRAILER</button></a>
             </div>
         </div>
+        <div class="peliculas">
+            <img src="imagenes/ELPILOTO.jpg" alt="pelicula">
+            <h3>EL PILOTO </h3>
+            <p>Ray Torrance es un piloto que tiene que enfrentarse a un aterrizaje de emergencia cuando pilota un avión comercial de pasajeros, dañado por una gran tormenta. Pero el lugar en el que aterriza es una zona de conflicto bélico entre dos facciones contrarias de grupos paramilitares, que al ver el avión deciden competir por quién de los dos grupos toma el control del avión y a sus pasajeros como rehenes. 
+            </p>
+            <div class="buttons">
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
+                <a href= "https://www.youtube.com/watch?v=X-s1kKazrx8">
+                <button type="submit">VER TRAILER</button></a>
+            </div>
+        </div>
+        <div class="peliculas">
+            <img src="imagenes/RAMBO.jpeg" alt="pelicula">
+            <h3>RAMBO</h3>
+            <p>First Blood is a 1982 action film directed by Ted Kotcheff, co-written by and starring Sylvester Stallone as John Rambo, a troubled and misunderstood veteran, with Sheriff Will Teasle (Brian Dennehy) ...
+            </p>
+            <div class="buttons">
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
+                <a href= "https://www.youtube.com/watch?v=yCla3qYTJyM">
+                <button type="submit">VER TRAILER</button></a>
+            </div>
+        </div>
+        <div class="peliculas">
+            <img src="imagenes/matrix.jpeg" alt="pelicula">
+            <h3>MATRIX</h3>
+            <p>El programador informático Thomas Anderson, más conocido en el mundo de los "hacker" como Neo, está en el punto de mira del temible agente Smith. Otros dos piratas informáticos, Trinity y Morfeo, se ponen en contacto con Neo para ayudarlo a escapar. Matrix te posee. Sigue al conejo blanco. 
+            </p>
+            <div class="buttons">
+                <button type="submit" data-tipo="alquilar">ALQUILAR</button><br>
+                <button type="submit" data-tipo="comprar">COMPRAR</button><br>
+                <a href= "https://www.youtube.com/watch?v=gYWvwkXreaI&t=12s">
+                <button type="submit">VER TRAILER</button></a>
+            </div>
+        </div>0
     </div>
-
+    </div>
 
     <footer>
         <p>derechos reservamos &copy;</p>
@@ -125,4 +161,11 @@
     </footer>
 
 
+
+
+
+
+
+    <script src="script3.js"></script>
 </body>
+</html>

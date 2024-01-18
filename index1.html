@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="videoclub_online">
     <title>Formulario de Contacto</title>
     <script src="https://kit.fontawesome.com/c070e348d4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style1.css">
@@ -27,7 +28,7 @@
             <div class="formulario">
             
                     <label for="nombre">NOMBRE:</label><br>
-                    <input type="text" id="nombre" ><br>
+                    <input type="text" id="nombre" required><br>
 
                     <label for="apellido">APELLIDO:</label><br>
                     <input type="text" id="apellido" required><br>
@@ -40,6 +41,7 @@
                     
                     <label for="password">Contraseña:</label><br>
                     <input type="text" id="password" required><br>
+                    <button type="button" onclick="togglePassword()">Mostrar/Ocultar Contraseña</button><br>
 
                     <label for="number">Numero de Telefono:</label><br>
                     <input type="number" id="number" required><br>
@@ -66,5 +68,6 @@
     </footer>
 
     <script src="registro.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>
