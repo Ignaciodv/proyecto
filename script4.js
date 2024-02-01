@@ -1,3 +1,6 @@
+
+/* 1er intento */
+
 /* // Obtener los elementos del carrito
 const carrito = document.querySelector("#carrito");
 const agregarCarrito = document.querySelectorAll(".buttons button");
@@ -32,6 +35,11 @@ nuevoItem.innerHTML = `
     <p>$${precio}</p>
     <button class="eliminar">Eliminar</button>
 `;
+/* --------------------------------------------------------- */
+
+
+
+/* 2do intento */
 
   // Agregar el nuevo elemento al carrito
 carrito.appendChild(nuevoItem);
@@ -97,6 +105,11 @@ function limpiarComprados() {
 /* botonLimpiarAlquilados.addEventListener('click', limpiarAlquilados);
 botonLimpiarComprados.addEventListener('click', limpiarComprados); */ 
 
+
+/*------------------------------------------------------------  */
+
+
+/* 3er intento */
 // Obtener las listas y el botón de limpiar
 
 const listaAlquilados = document.getElementById('listaAlquilados');
@@ -106,17 +119,17 @@ const botonLimpiarComprados = document.querySelector('button[onclick="limpiarCom
 
 
 // Funciones para manejar la lista de alquilados y comprados
-{
+
 const botonesAlquilar = document.querySelectorAll('button[onclick="alquilar()"]');
 botonesAlquilar.forEach((boton) => {
-  boton.addEventListener('click', function ()
-  const pelicula = this.parentNode.parentNode;
-  const titulo = pelicula.querySelector('h3').textContent;
-  const itemLista = document.createElement('li');
-  const valor = 2500;
-  itemLista.innerHTML = `${titulo} - <strong>Alquiler:</strong> $${valor}`;
-  listaAlquilados.appendChild(itemLista);
-  alert(`Se alquiló la película "${titulo}"`);
+boton.addEventListener('click', function ()
+const pelicula = this.parentNode.parentNode;
+const titulo = pelicula.querySelector('h3').textContent;
+const itemLista = document.createElement('li');
+const valor = 2500;
+itemLista.innerHTML = `${titulo} - <strong>Alquiler:</strong> $${valor}`;
+listaAlquilados.appendChild(itemLista);
+alert(`Se alquiló la película "${titulo}"`);
 
 });
 const botonesComprar = document.querySelectorAll('button[onclick="comprar()"]');
