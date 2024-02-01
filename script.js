@@ -17,9 +17,12 @@ function agregarAlCarrito(event) {
 
     if(tipo === "comprar"){
       precio = 5000;
+      return precio
     }else if (tipo === "alquilar"){
       precio = 2500;
+      return precio
     }
+    console.log("Precio de la pelicula " + precio);
 
   // Crear un nuevo elemento de carrito
 const nuevoItem = document.createElement("div");

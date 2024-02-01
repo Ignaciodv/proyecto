@@ -8,17 +8,24 @@ agregarCarrito.forEach((boton) => {
 });
 
 // Función para agregar un producto al carrito
-function agregarAlCarrito(event) {
+function agregarAlCarrito(event) 
+{
+  let precio = 0;
     const boton = event.target;
     const pelicula = boton.parentElement.parentElement;
+    
+    const tituloElemento = pelicula.querySelector("h3");
+  
     const titulo = pelicula.querySelector("h3").textContent;
-    let precio = 0; // Precio de la película
+     // Precio de la película
     const tipo = pelicula.dataset.tipo;
 
     if(tipo === "comprar"){
       precio = 5000;
+      return precio;
     }else if (tipo === "alquilar"){
-      precio = 2500;
+      precio2 = 2500;
+      return precio;
     }
 
   // Crear un nuevo elemento de carrito
