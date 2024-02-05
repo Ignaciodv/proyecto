@@ -143,6 +143,27 @@ button:hover{
     cursor: pointer;
 
 }
+
+
+
+.listas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+
+.listas h4{
+    margin-left: 15px;
+    color: darkgrey;
+}
+
+ul{
+
+    color: white;
+}
+
+
 /* FIN DE RETOQUES EN LAS PELIS Y LA IMAGEN */
 
 
@@ -154,27 +175,42 @@ footer{
 
 .redesSociales{
     font-size: 25px;
+
 }
 
 .redesSociales i{
     padding: 5px;
 
+
 }
 
 .redesSociales a:first-child{
     color: #0866ff;
+    position: fixed;
+    bottom: 60px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
 }
 
 .redesSociales a:nth-child(2){
     color: #1DA1F2;
+    position: fixed;
+    bottom: 100px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
 }
 
 .redesSociales a:nth-child(3){
     color: #E1306E;
+    position: fixed;
+    bottom: 140px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
 }
 
 .redesSociales a:last-child{
     color: green;
+    position: fixed;
+    bottom: 180px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
+
 }
 
 
