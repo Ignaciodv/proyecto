@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Películas</title>
+</head>
+<body>
+    <div>
+        <img src="/img/Pelicula.webp" alt="Películas">
+    </div>
+
+    <h1>LISTADO DE PELÍCULAS</h1>
+
+    <a href="/movies/add">Agregar Una Película</a>
+    <a href="/">Inicio</a>
+
+        <ul>
+            <% movies.map(function(movie) { %>
+                <li>
+                   <a href="/movies/detail/<%=movie.id%>"><%= movie.title %></a> 
+                </li>
+            <% }) %>
+        </ul>
+        <!-- <ul>
+            <% for (let i = 0; i < movies.length; i++) { %>
+                <li>
+                    <%= movies[i].title %>
+                </li>
+            <% } %>
+        </ul> -->
+
+</body>
+</html>

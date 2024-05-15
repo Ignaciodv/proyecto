@@ -1,0 +1,23 @@
+body{
+    font-family: ns-serif;
+    margin:50px; 
+    padding: 20px;
+    background-image: url(imagenes/fondo_web.jpg);
+    color: white;
+    font-size: 25px;
+    
+}
+
+h1{
+    text-decoration: underline;
+}
+form{
+    background-color: #2c3e50;
+}
+
+
+
+
+
+
+

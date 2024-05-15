@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="videoclub_online">
+    <title>Formulario de Contacto</title>
+    <script src="https://kit.fontawesome.com/c070e348d4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        #map-container{
+            height: 200px;
+            width: 200px;
+            border: 1px solid rgb(128, 120, 120);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./index2.html">Terror</a></li>
+                <li><a href="index3.html">Accion</a></li>
+                <li><a href="index4.html">Comedia</a></li>
+                <li><a href="./index1.html">Contacto</a></li>
+            </ul>
+            <button class="burguer">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    <form id="registro">
+        <h2>Bienvenido a Video Club Online</h2>
+            <div class="formulario">
+            
+                    <label for="nombre">NOMBRE:</label><br>
+                    <input type="text" id="nombre" required><br>
+
+                    <label for="apellido">APELLIDO:</label><br>
+                    <input type="text" id="apellido" required><br>
+
+                    <label for="mail">e-mail:</label><br>
+                    <input type="text" id="mail" required><br>
+
+                    <label for="userName">Nombre de usuario:</label><br>
+                    <input type="text" id="userName" required><br>
+                    
+                    <label for="password">Contraseña:</label><br>
+                    <input type="password" id="password" required><button class="ojo" type="button" onclick="togglePassword()"><i class="bi bi-eye-slash"></i></button><br>
+                    
+                    <label for="number">Numero de Telefono:</label><br>
+                    <input type="number" id="number" required><br>
+
+                    <label for="coment">Deja tu comentario:</label><br>
+                    <input class="coment" type="text" id="coment" required><br>
+                    
+                    <button type="submit">Enviar</button>
+                    
+                    
+            </div>
+    </form>
+
+
+    <footer>
+        <p>Derechos reservados &copy;</p>
+        <div class="card"> 
+            <p>mapa de google</p>
+            <div id="map-container"></div>
+        </div>
+        <p>Siguenos en redes sociales</p>
+        <div class="redesSociales">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/videoclub_online" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=543435108426"target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="registro.js"></script>
+    <script src="script1.js"></script>
+    <script src="mapp.js"></script>
+</body>
+</html>
