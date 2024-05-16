@@ -1,12 +1,37 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-body{
+.body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0%;
     padding: 0%;
+    background-color: #0e2439;
     background-image: url(imagenes/fondo_web.jpg);
 }
+.h1{ 
+    color: #FD3685;
+    display: flex;
+    justify-content: center;
+}
 
+.logo {
+    height: 200px;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 20%; /* Tamaño inicial del logo */
+    height: auto; /* Mantiene la proporción del logo */
+    transition: transform 0.5s ease; 
+}
+
+.logo:hover img {
+    transform: scale(0.8); /* Escala el logo al 80% de su tamaño original al pasar el ratón por encima */
+    animation: moveLogo 2s infinite alternate; /* Animación de movimiento */
+    justify-content: center;
+}
 
 nav{
     background-color:black ;
@@ -96,17 +121,9 @@ footer{
     align-items: center;
 }
 
-
-
 .redesSociales{
     font-size: 25px;
-
-}
-
-.redesSociales i{
-    padding: 5px;
-
-
+    padding: 5px 10px;
 }
 
 .redesSociales a:first-child{
@@ -136,6 +153,32 @@ footer{
     bottom: 180px; /* Ajusta según tu preferencia */
     right: 20px; /* Ajusta según tu preferencia */
 
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+}
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #FD3685; /* Color de texto */
+    font-family: Arial, sans-serif; /* Familia de fuente */
+    font-size: 16px; /* Tamaño de fuente */
+    display: block;
+    padding: 10px; /* Espacio alrededor del texto */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.menu-link:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
 }
 
 
