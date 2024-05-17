@@ -1,12 +1,13 @@
 module.exports = (sequelize, dataTypes) =>{
     let alias = "pelis";
     let cols = {
+    
         id: {
         type: dataTypes.BIGINT(10).UNSIGNED,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
-    }, 
+    },
     
     title: {
         type: dataTypes.STRING(500),
