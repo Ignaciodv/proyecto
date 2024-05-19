@@ -34,31 +34,26 @@
         </nav>
     </header>
 
-        <!-- <ul>
-            <% movies.map(function(movie) { %>
-                <li>
-                   <a href="/movies/detail/<%=movie.id%>"><%= movie.title %></a> 
-                </li>
-            <% }) %>
-        </ul> -->
-
-
         <div class="container_peliculas">
             <% movies.map(function(movie) { %>
                 <div class="peliculas">
-                    <a href="/movies/detail/<%=movie.id%>"><img src="#" alt="pelicula"></a>
+                    <a href="/movies/detail/<%= movie.id %>">
+                        <img src="<%= movie.image %>" alt="<%= movie.title %>">
+                    </a>
                     <h3><%= movie.title %></h3>
                     <p><%= movie.info %></p>
                     <div class="buttons">
-                    <button onclick="alquilar()">ALQUILAR</button><br>
-                    <button onclick="comprar()">COMPRAR</button><br>
-                    
-                        <a href="https://www.youtube.com/watch?v=M8CPW0EBqX8"target="_blank">
-                        <button type="submit">VER TRAILER</button><br></a>
+                        <button onclick="alquilar()">ALQUILAR</button><br>
+                        <button onclick="comprar()">COMPRAR</button><br>
+                        <a href="https://www.youtube.com/watch?v=M8CPW0EBqX8" target="_blank">
+                            <button type="submit">VER TRAILER</button><br>
+                        </a>
                     </div>
                 </div>
             <% }) %>
         </div>
+
+
 
         <footer>
             <p>derechos reservados &copy;</p>

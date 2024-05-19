@@ -1,27 +1,44 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= movie.title %> </title>
-    <link rel="stylesheet" href="styles/index.css">
-
+    <title><%= movie.title %></title>
+    <link rel="stylesheet" href="/styles/detail.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/movies/drama">Drama</a></li>
+                <li><a href="/movies/cienciaFiccion">Ciencia Ficción</a></li>
+                <li><a href="/movies/aventuras">Aventuras</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/movies">Catálogo de películas</a></li>
+            </ul>
+            <button class="burguer">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
 
-    <h1><%= movie.title %> </h1>    
-    <br>
-    <p>SINOPSIS: <%= movie.info %></p>
-    <p>CALIFICACIÓN: <%= movie.rating %> </p>
-    <p>PREMIOS: <%= movie.awards %> </p>
-    <p>DURACIÓN: <%= movie.length + ' min'%> </p>
-    <p>FECHA DE CREACIÓN: <%= movie.release_date %> </p>
-    <br>
-    <section>
-        <a class="botonModificar" href="/movies/edit/<%= movie.id %>">Modificar</a>
-        <a class="botonBorrar" href="/movies/delete/<%= movie.id %>">Borrar</a>
-        <a class="botonVolver" href="/movies">Listado de Películas</a>
-    </section>
-
+    <div class="container">
+        <img src="<%= movie.image %>" alt="<%= movie.title %>" class="movie-poster">
+        <h1 class="movie-title"><%= movie.title %></h1>    
+        <p class="synopsis"><strong>Sinopsis:</strong> <%= movie.info %></p>
+        <p class="rating"><strong>Calificación:</strong> <%= movie.rating %></p>
+        <p class="awards"><strong>Premios:</strong> <%= movie.awards %></p>
+        <p class="duration"><strong>Duración:</strong> <%= movie.length + ' min'%></p>
+        <p class="release-date"><strong>Fecha de Creación:</strong> <%= movie.release_date %></p>
+        <div class="buttons">
+            <a class="button modify" href="/movies/edit/<%= movie.id %>">Modificar</a>
+            <a class="button delete" href="/movies/delete/<%= movie.id %>">Borrar</a>
+            <a class="button back" href="/movies">Listado de Películas</a>
+        </div>
+    </div>
 </body>
 </html>
+

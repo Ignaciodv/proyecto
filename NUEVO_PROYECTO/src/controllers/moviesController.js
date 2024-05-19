@@ -1,129 +1,135 @@
 const db = require('../database/models');
-const path = require('path')
+const path = require('path');
 const moment = require('moment');
 
-
-//Acá tienen otra forma de llamar a cada uno de los modelos
 const Movies = db.Movie;
 const Genres = db.Genre;
 
-
 const moviesController = {
     'list': (req, res) => {
-        db.Movie.findAll({
+        Movies.findAll({
             include: ['genre']
         })
-            .then(movies => {
-                res.render('moviesList.ejs', {movies})
-            })
+        .then(movies => {
+            res.render('moviesList.ejs', { movies });
+        })
+        .catch(error => res.send(error));
     },
 
     'detail': (req, res) => {
-        db.Movie.findByPk(req.params.id,
-            {
-                include : ['genre']
-            })
-            .then(movie => {
-                res.render('moviesDetail.ejs', {movie});
-            });
+        Movies.findByPk(req.params.id, {
+            include: ['genre']
+        })
+        .then(movie => {
+            res.render('moviesDetail.ejs', { movie });
+        })
+        .catch(error => res.send(error));
     },
 
     'drama': (req, res) => {
-        db.Movie.findAll({
-          include: ['genre'],
-          where: {
-            genre_id: 3 // Filtra por películas de género terror (ID 123)
-          }
+        Movies.findAll({
+            include: ['genre'],
+            where: { genre_id: 3 }
         })
         .then(movies => {
-          res.render('moviesDrama.ejs', { movies });
-        });
-      },
+            res.render('moviesDrama.ejs', { movies });
+        })
+        .catch(error => res.send(error));
+    },
 
-      'cienciaFiccion': (req, res) => {
-        db.Movie.findAll({
-          include: ['genre'],
-          where: {
-            genre_id: 5 // Filtra por películas de género terror (ID 123)
-          }
+    'cienciaFiccion': (req, res) => {
+        Movies.findAll({
+            include: ['genre'],
+            where: { genre_id: 5 }
         })
         .then(movies => {
-          res.render('moviesCienciaFiccion.ejs', { movies });
-        });
-      },
+            res.render('moviesCienciaFiccion.ejs', { movies });
+        })
+        .catch(error => res.send(error));
+    },
 
-      'aventuras': (req, res) => {
-        db.Movie.findAll({
-          include: ['genre'],
-          where: {
-            genre_id: 8 // Filtra por películas de género terror (ID 123)
-          }
+    'aventuras': (req, res) => {
+        Movies.findAll({
+            include: ['genre'],
+            where: { genre_id: 8 }
         })
         .then(movies => {
-          res.render('moviesAventuras.ejs', { movies });
-        });
-      },
+            res.render('moviesAventuras.ejs', { movies });
+        })
+        .catch(error => res.send(error));
+    },
 
-
-    //Acá dispongo las rutas para trabajar con el CRUD
     add: function (req, res) {
-        let promGenres = Genres.findAll();
-        
-        Promise
-        .all([promGenres])
-        .then(([allGenres]) => {
-            return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres})})
-        .catch(error => res.send(error))
+        Genres.findAll()
+        .then(allGenres => {
+            res.render(path.resolve(__dirname, '..', 'views', 'moviesAdd'), { allGenres });
+        })
+        .catch(error => res.send(error));
     },
 
-    create: function (req,res) {
-        Movies.create(
-            {
-                title: req.body.title,
-                info: req.body.info,
-                rating: req.body.rating,
-                awards: req.body.awards,
-                release_date: req.body.release_date,
-                length: req.body.length,
-                genre_id: req.body.genre_id
-            }
-        )
-        .then(()=> {
-            return res.redirect('/movies')})
-        .catch(error => res.send(error))
+    create: function (req, res) {
+        Movies.create({
+            title: req.body.title,
+            info: req.body.info,
+            rating: req.body.rating,
+            awards: req.body.awards,
+            release_date: req.body.release_date,
+            length: req.body.length,
+            genre_id: req.body.genre_id,
+            image: req.file ? `/uploads/${req.file.filename}` : null // Guardar la ruta de la imagen
+        })
+        .then(() => {
+            res.redirect('/movies');
+        })
+        .catch(error => res.send(error));
     },
 
-    edit: function(req,res) {
+
+    edit: function (req, res) {
         let movieId = req.params.id;
-        let promMovies = Movies.findByPk(movieId,{include: ['genre']});
+        let promMovies = Movies.findByPk(movieId, { include: ['genre'] });
         let promGenres = Genres.findAll();
-        Promise
-        .all([promMovies, promGenres])
-        .then(([Movie, allGenres]) => {
-            Movie.release_date = moment(Movie.release_date).format('L');
-            return res.render(path.resolve(__dirname, '..', 'views',  'moviesEdit'), {Movie,allGenres})})
-        .catch(error => res.send(error))
-    },
-
-    update: function (req,res) {
-        let movieId = req.params.id;
-        Movies.update(
-            {
-                title: req.body.title,
-                info: req.body.info,
-                rating: req.body.rating,
-                awards: req.body.awards,
-                release_date: req.body.release_date,
-                length: req.body.length,
-                genre_id: req.body.genre_id
-            },
-            {
-                where: {id: movieId}
+        Promise.all([promMovies, promGenres])
+            .then(([Movie, allGenres]) => {
+                Movie.release_date = moment(Movie.release_date).format('L');
+                res.render(path.resolve(__dirname, '..', 'views', 'moviesEdit'), { Movie, allGenres });
             })
-        .then(()=> {
-            return res.redirect('/movies')})            
-        .catch(error => res.send(error))
+            .catch(error => res.send(error));
     },
+
+    update: function (req, res) {
+        let movieId = req.params.id;
+        Movies.findByPk(movieId)
+            .then(movie => {
+                if (!movie) {
+                    return res.status(404).send('Movie not found');
+                }
+    
+                let updatedData = {
+                    title: req.body.title,
+                    info: req.body.info,
+                    rating: req.body.rating,
+                    awards: req.body.awards,
+                    release_date: req.body.release_date,
+                    length: req.body.length,
+                    genre_id: req.body.genre_id
+                };
+    
+                // Verificar si se cargó un archivo de imagen
+                if (req.file) {
+                    updatedData.image = `/uploads/${req.file.filename}`;
+                }
+    
+                // Actualizar los datos de la película
+                movie.update(updatedData)
+                    .then(() => {
+                        res.redirect('/movies');
+                    })
+                    .catch(error => res.send(error));
+            })
+            .catch(error => res.send(error));
+    },
+
 
     delete: function(req, res){
         let movieID = req.params.id;
@@ -133,13 +139,14 @@ const moviesController = {
             .catch(error => res.send(error))
     },
 
-    destroy: function(req, res){
+    destroy: function (req, res) {
         let movieID = req.params.id;
-        Movies.destroy({where:{id: movieID}})
-        .then(() =>{return res.redirect('/movies')})
+        Movies.destroy({ where: { id: movieID } })
+        .then(() => {
+            res.redirect('/movies');
+        })
         .catch(error => res.send(error));
     }
-                           
 }
 
 module.exports = moviesController;

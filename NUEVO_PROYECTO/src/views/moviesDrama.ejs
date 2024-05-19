@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="videoclub_online">
     <script src="https://kit.fontawesome.com/c070e348d4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="../styles/index.css">
     <title>Peliculas de drama</title>
 </head>
 
@@ -35,22 +35,24 @@
     </header>
 
 
-            <div class="container_peliculas">
-                <% movies.map(function(movie) { %>
-                    <div class="peliculas">
-                        <a href="/movies/detail/<%=movie.id%>"><img src="#" alt="pelicula"></a>
-                        <h3><%= movie.title %></h3>
-                        <p><%= movie.info %></p>
-                        <div class="buttons">
-                        <button onclick="alquilar()">ALQUILAR</button><br>
-                        <button onclick="comprar()">COMPRAR</button><br>
-                        
-                            <a href="https://www.youtube.com/watch?v=M8CPW0EBqX8"target="_blank">
-                            <button type="submit">VER TRAILER</button><br></a>
-                        </div>
-                    </div>
-                <% }) %>
+    <div class="container_peliculas">
+        <% movies.map(function(movie) { %>
+            <div class="peliculas">
+                <a href="/movies/detail/<%= movie.id %>">
+                    <img src="<%= movie.image %>" alt="<%= movie.title %>">
+                </a>
+                <h3><%= movie.title %></h3>
+                <p><%= movie.info %></p>
+                <div class="buttons">
+                    <button onclick="alquilar()">ALQUILAR</button><br>
+                    <button onclick="comprar()">COMPRAR</button><br>
+                    <a href="https://www.youtube.com/watch?v=M8CPW0EBqX8" target="_blank">
+                        <button type="submit">VER TRAILER</button><br>
+                    </a>
+                </div>
             </div>
+        <% }) %>
+    </div>
     
 
             <footer>
@@ -68,6 +70,5 @@
                 </div>
     
             </footer>
-            <script src="script4.js"></script>
 </body>
 </html>
