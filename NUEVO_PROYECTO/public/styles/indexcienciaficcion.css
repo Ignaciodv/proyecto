@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #16212b;
+}
+.h1{
+    background-color: #29f729;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.header {
+    background-color: #011827;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    max-width: 120px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    animation: moveLeftRight 5s linear infinite;
+    border: 2px solid C;
+    margin-top: 20px;
+    border-color: #29f729;
+}
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+.menu {
+    align-items: center;
+    justify-content: center;
+}
+header nav ul {
+    background-color: #011827;
+    color: white !important;
+    align-items: space-around;
+    list-style-type: none; 
+    padding: 0; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+header nav ul li {
+    display: inline-block;
+    background-color: #011827;
+    color: white;
+    display: inline; 
+    margin-right: 90px; 
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px; 
+    margin-left: 20px;
+}
+nav ul {
+    list-style-type: none; /* Quita los marcadores de la lista */
+    padding: 0; /* Quita el relleno interior de la lista */
+}
+
+nav ul li {
+    display: inline; /* Muestra los elementos de la lista en línea */
+    margin-right: 20px; /* Establece el margen derecho para separar los elementos */
+}
+
+nav ul li a {
+    color: #fff; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+/* Estilos para el contenedor de películas */
+.container_peliculas {
+    display: flex; /* Usa flexbox para organizar los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.peliculas {
+    width: calc(33.33% - 20px); /* Calcula el ancho de cada película */
+    margin-bottom: 20px;
+    border-color: #29f729; 
+    border-width: 3px; /* Cambia este valor según lo grueso que desees el borde */
+    border-style: solid;
+    align-items: baseline;
+}
+
+.peliculas img {
+    width: 200px; /* Ancho fijo para todas las imágenes */
+    height: 300px; /* Alto fijo para todas las imágenes */
+    display: block;
+    margin: 0 auto;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons {
+    background-color: #29f729;
+    color: #29f729;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.buttons.buttons:hover {
+    box-shadow: 0px 4px 6px #29f729;
+}
+footer {
+    background-color: #011827; /* Color de fondo del pie de página */
+    color: #fff; /* Color del texto del pie de página */
+    padding: 20px 0; /* Espaciado interno del pie de página */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+
+.redesSociales{
+    font-size: 25px;
+    padding: 5px 10px;
+}
+
+.redesSociales a:first-child{
+    color: #0866ff;
+    position: fixed;
+    bottom: 60px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
+}
+
+.redesSociales a:nth-child(2){
+    color: #1DA1F2;
+    position: fixed;
+    bottom: 100px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
+}
+
+.redesSociales a:nth-child(3){
+    color: #E1306E;
+    position: fixed;
+    bottom: 140px; /* Ajusta según tu preferencia */
+    right: 20px; /* Ajusta según tu preferencia */
+}
+
+.redesSociales a:nth-child(4){
+    color: green;
+    position: fixed;
+    bottom: 180px;
+    right: 20px;  
+}
+.d-grid {
+    background-color: #29f729;
+}
+.gap-2{
+    background-color: #29f729;
+}
